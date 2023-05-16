@@ -2467,6 +2467,19 @@
 	glass_desc = "Exotically blue, fruity drink, distilled from oranges."
 	glass_center_of_mass = list("x"=16, "y"=5)
 
+/singleton/reagent/alcohol/cachaca_gold
+	name = "Cachaça Gold"
+	description = "Cachaça spirit made from sugar cane."
+	color = "#cac17e"
+	strength = 40
+	taste_description = "sweet and strong alocohol"
+
+	glass_icon_state = "cup_of_cachaca"
+	glass_name = "glass of Cachaça Gold"
+	glass_desc = "You can feel the 'boteco' and maybe that 'morena' is not coming anyway..."
+	glass_center_of_mass = list("x"=16, "y"=5)
+
+
 /singleton/reagent/alcohol/champagne
 	name = "Champagne"
 	description = "A classy sparkling wine, usually found in meeting rooms and basements."

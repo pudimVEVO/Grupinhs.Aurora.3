@@ -48,7 +48,7 @@
 
 	if(use_check_and_message(user))
 		return
-	
+
 	var/obj/item/reagent_containers/food/drinks/cans/C = cans[length(cans)]
 	cans -= C
 	remove_from_storage(C, get_turf(user))

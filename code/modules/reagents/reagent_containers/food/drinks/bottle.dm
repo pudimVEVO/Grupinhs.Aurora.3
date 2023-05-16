@@ -393,6 +393,14 @@
 	center_of_mass = list("x"=16, "y"=6)
 	reagents_to_add = list(/singleton/reagent/alcohol/bluecuracao = 100)
 
+/obj/item/reagent_containers/food/drinks/bottle/cachaca_gold
+	name = "Cachaça Gold"
+	desc = "A bottle of 'cachaça' spirit, aged in oak barrels made from the best sugar cane... Quality seal from the makers of the 51 'Cachaça'."
+	icon_state = "cachaca_gold"
+	empty_icon_state = "cachaca_gold_empty"
+	center_of_mass = list("x"=16, "y"=6)
+	reagents_to_add = list(/singleton/reagent/alcohol/cachaca_gold = 100)
+
 /obj/item/reagent_containers/food/drinks/bottle/grenadine
 	name = "Getmore's Tangy grenadine syrup"
 	desc = "Sweet and tangy, a bar syrup used to add color or flavor to drinks."

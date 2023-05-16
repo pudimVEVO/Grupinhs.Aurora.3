@@ -765,6 +765,7 @@
 	icon_state = "broken_bottle"
 	spawnlist = list(
 		/obj/item/reagent_containers/food/drinks/bottle/gin,
+		/obj/item/reagent_containers/food/drinks/bottle/cachaca_gold,
 		/obj/item/reagent_containers/food/drinks/bottle/whiskey,
 		/obj/item/reagent_containers/food/drinks/bottle/vodka,
 		/obj/item/reagent_containers/food/drinks/bottle/tequila,

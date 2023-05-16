@@ -1,5 +1,5 @@
 //These value assume that each unit is roughly a gram
-
+// maybe mess with this
 /singleton/reagent
 	var/value = 1 //per unit
 
@@ -163,6 +163,9 @@
 	value = 0.15
 
 /singleton/reagent/alcohol/bluecuracao
+	value = 0.16
+
+/singleton/reagent/alcohol/cachaca_gold
 	value = 0.16
 
 /singleton/reagent/alcohol/champagne

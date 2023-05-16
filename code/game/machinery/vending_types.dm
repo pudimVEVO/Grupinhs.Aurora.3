@@ -55,6 +55,7 @@
 		/obj/item/reagent_containers/food/drinks/bottle/bitters = 6,
 		/obj/item/reagent_containers/food/drinks/bottle/boukha = 2,
 		/obj/item/reagent_containers/food/drinks/bottle/brandy = 4,
+		/obj/item/reagent_containers/food/drinks/bottle/cachaca_gold = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/grenadine = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/tequila = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/rum = 5,
