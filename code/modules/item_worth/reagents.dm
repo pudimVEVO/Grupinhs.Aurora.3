@@ -255,6 +255,9 @@
 /singleton/reagent/alcohol/blackrussian
 	value = 0.14
 
+/singleton/reagent/alcohol/foddy
+	value = 0.16
+
 /singleton/reagent/alcohol/bloodymary
 	value = 0.14
 

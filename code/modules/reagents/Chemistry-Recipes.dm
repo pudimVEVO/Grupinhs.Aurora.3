@@ -2247,6 +2247,20 @@
 	required_reagents = list(/singleton/reagent/alcohol/whiskey = 2, /singleton/reagent/drink/sodawater = 1)
 	result_amount = 3
 
+/datum/chemical_reaction/drink/yachulte
+	name = "Yachulte"
+	id = "yachulte"
+	result = /singleton/reagent/alcohol/yachulte
+	required_reagents = list(/singleton/reagent/alcohol/cachaca_gold = 1, /singleton/reagent/drink/milk/adhomai/fermented = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/drink/foddy
+	name = "Foddy"
+	id = "foddy"
+	result = /singleton/reagent/alcohol/foddy
+	required_reagents = list(/singleton/reagent/alcohol/cachaca_gold = 1, /singleton/reagent/drink/milk/chocolate = 2 )
+	result_amount = 3
+
 /datum/chemical_reaction/drink/black_russian
 	name = "Black Russian"
 	id = "blackrussian"

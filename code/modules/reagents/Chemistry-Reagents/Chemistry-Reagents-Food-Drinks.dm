@@ -2986,6 +2986,46 @@
 	glass_desc = "For the lactose-intolerant. Still as classy as a White Russian."
 	glass_center_of_mass = list("x"=16, "y"=9)
 
+/singleton/reagent/alcohol/yachulte
+	name = "Yachulte"
+	description = "W-What is this?! Milk and alcohol?! how does this even work?!"
+	color = "#ceddad"
+	strength = 30
+	taste_description = "milky delight"
+
+	glass_icon_state = "yachulte"
+	glass_name = "glass of Yachulte"
+	glass_desc = "Milk and alcohol... smells great!"
+	glass_center_of_mass = list("x"=16, "y"=9)
+
+/singleton/reagent/alcohol/foddy
+	name = "Foddy"
+	description = "Jesus... w-why did you let this be created? you have brought ruin to this bar"
+	color = "#993a38"
+	strength = 40
+	taste_description = "chocolate brain damage"
+
+	glass_icon_state = "foddy"
+	glass_name = "glass of Foddy"
+	glass_desc = "Jesus... w-why did you let this be created? you have brought ruin to this bar"
+	glass_center_of_mass = list("x"=16, "y"=9)
+
+/singleton/reagent/alcohol/foddy/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed, var/datum/reagents/holder)
+	M.confused = max(M.confused, 20)
+	var/dose = M.chem_doses[type]
+	if(prob(2))
+		M.emote("twitch")
+	if(prob(5))  //make it stronger!! IT NEEDS TO EXPLODE THE LIVER!!
+		to_chat(M, SPAN_WARNING(pick("W-Why did i drink this?","You feel really confused.","What was I just thinking of?","Where am I?","Your muscles are tingling.")))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/liver/L = H.internal_organs_by_name[BP_LIVER]
+		if (dose > 2)
+			if (L && istype(L))
+				if(dose < 5)
+					L.take_damage(10 * removed, 0)
+				else
+					L.take_damage(100, 0)
+
 /singleton/reagent/alcohol/bloodymary
 	name = "Bloody Mary"
 	description = "A strange yet pleasurable mixture made of vodka, tomato and lime juice. Or at least you THINK the red stuff is tomato juice."
