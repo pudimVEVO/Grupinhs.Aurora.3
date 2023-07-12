@@ -15183,7 +15183,6 @@
 /obj/effect/floor_decal/corner/red{
 	dir = 9
 	},
-/obj/machinery/computer/station_alert,
 /turf/simulated/floor/tiled/dark,
 /area/shuttle/administration)
 "fWO" = (
@@ -18229,7 +18228,7 @@
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 5
 	},
-/obj/machinery/light/spot/weak{
+/obj/machinery/light/spot{
 	dir = 1;
 	name = "adjusted spotlight";
 	pixel_x = -16
@@ -22664,9 +22663,6 @@
 /turf/unsimulated/floor,
 /area/centcom/legion)
 "kNJ" = (
-/obj/item/circuitboard/rcon_console{
-	name = "circuit board (Ticket Kiosk Console)"
-	},
 /turf/unsimulated/floor{
 	icon_state = "panelscorched"
 	},
@@ -40897,7 +40893,7 @@
 /turf/unsimulated/floor,
 /area/centcom/ferry)
 "wNC" = (
-/obj/machinery/light/spot/weak,
+/obj/machinery/light/spot,
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 10
 	},
