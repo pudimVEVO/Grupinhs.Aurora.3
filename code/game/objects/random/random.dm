@@ -44,7 +44,7 @@
 		. = new itemtype(loc)
 
 	if (!.)
-		log_debug("random_obj: [DEBUG_REF(src)] returned null item!")
+		LOG_DEBUG("random_obj: [DEBUG_REF(src)] returned null item!")
 
 /obj/random/single
 	name = "randomly spawned object"
