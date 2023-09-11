@@ -227,10 +227,10 @@
 			var/damage = 0
 			total_radiation -= 1 * RADIATION_SPEED_COEFFICIENT
 			if(prob(25))
-				damage = 1
+				damage = 2
 
 			if (total_radiation > 50)
-				damage = 1
+				damage = 3
 				total_radiation -= 1 * RADIATION_SPEED_COEFFICIENT
 				if(prob(5) && prob(100 * RADIATION_SPEED_COEFFICIENT))
 					src.apply_radiation(-5 * RADIATION_SPEED_COEFFICIENT)
@@ -247,9 +247,10 @@
 
 			if (total_radiation > 75)
 				src.apply_radiation(-1 * RADIATION_SPEED_COEFFICIENT)
-				damage = 3
+				damage = 7
 				if(prob(5))
-					take_overall_damage(0, 5 * RADIATION_SPEED_COEFFICIENT, used_weapon = "Radiation Burns")
+					take_overall_damage(0, 10 * RADIATION_SPEED_COEFFICIENT, used_weapon = "Radiation Burns")
+					to_chat(src, "<span class='warning'>You feel a burning sensation!</span>")
 				if(prob(1))
 					to_chat(src, "<span class='warning'>You feel strange!</span>")
 					adjustCloneLoss(5 * RADIATION_SPEED_COEFFICIENT)
@@ -1397,12 +1398,14 @@
 /mob/living/carbon/human/handle_vision()
 	if(client)
 		client.screen.Remove(global_hud.blurry, global_hud.druggy, global_hud.vimpaired, global_hud.darkMask, global_hud.nvg, global_hud.thermal, global_hud.meson, global_hud.science)
+	var/machine_has_equipment_vision = FALSE
 	if(machine)
 		var/viewflags = machine.check_eye(src)
 		if(viewflags < 0)
 			reset_view(null, 0)
 		else if(viewflags)
 			set_sight(sight, viewflags)
+		machine_has_equipment_vision = machine.grants_equipment_vision(src)
 	else if(eyeobj)
 		if(eyeobj.owner != src)
 			reset_view(null)
@@ -1417,7 +1420,7 @@
 			remoteview_target = null
 			reset_view(null, 0)
 
-	update_equipment_vision()
+	update_equipment_vision(machine_has_equipment_vision)
 	species.handle_vision(src)
 
 /mob/living/carbon/human/handle_hearing()
