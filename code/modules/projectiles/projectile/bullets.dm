@@ -240,6 +240,18 @@
 	maim_type = DROPLIMB_BLUNT
 	anti_materiel_potential = 2
 
+/obj/item/projectile/bullet/rifle/panzershell
+	damage = 90
+	stun = 3
+	weaken = 3
+	penetrating = 6
+	armor_penetration = 75
+	hitscan = 1
+	maiming = 1
+	maim_rate = 3
+	maim_type = DROPLIMB_BLUNT
+	anti_materiel_potential = 2
+
 /obj/item/projectile/rifle/kumar_super
 	damage = 40
 	armor_penetration = 30

@@ -238,6 +238,17 @@
 	spent_icon = "lcasing-spent"
 	max_stack = 2
 
+/obj/item/ammo_casing/panzershell
+	name = "shell casing"
+	desc = "A 16mm shell."
+	caliber = "16mm"
+	projectile_type = /obj/item/projectile/bullet/rifle/panzershell
+	matter = list(DEFAULT_WALL_MATERIAL = 1250)
+	icon_state = "nitrocasing"
+	spent_icon = "nitrospent"
+	max_stack = 3
+
+
 /obj/item/ammo_casing/a556
 	desc = "A 5.56mm bullet casing."
 	caliber = "a556"

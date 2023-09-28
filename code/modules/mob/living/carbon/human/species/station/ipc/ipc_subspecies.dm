@@ -425,6 +425,8 @@
 	name = SPECIES_IPC_ZENGHU
 	short_name = "zhf"
 	bodytype = BODYTYPE_IPC_ZENGHU
+	default_genders = list(NEUTER)
+	selectable_pronouns = list(MALE, FEMALE, PLURAL, NEUTER)
 
 	icobase = 'icons/mob/human_races/ipc/r_ind_zenghu.dmi'
 	deform = 'icons/mob/human_races/ipc/r_ind_zenghu.dmi'
@@ -442,7 +444,7 @@
 	grab_mod = 1.1 // Smooth, fast
 	resist_mod = 4 // Not super strong, but still rather strong
 
-	appearance_flags = HAS_EYE_COLOR | HAS_UNDERWEAR | HAS_SOCKS
+	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_UNDERWEAR | HAS_SOCKS
 
 	examine_color = "#ff00ff"
 
@@ -464,8 +466,11 @@
 
 	inherent_verbs = list(
 		/mob/living/carbon/human/proc/self_diagnostics,
-		/mob/living/carbon/human/proc/check_tag
+		/mob/living/carbon/human/proc/check_tag,
+		/mob/living/carbon/human/proc/tie_hair
 		)
+	use_alt_hair_layer = FALSE
+
 	maneuvers = list(
 		/singleton/maneuver/leap/zenghu
 	)

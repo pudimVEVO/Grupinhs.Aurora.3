@@ -276,3 +276,90 @@
 		toggle_scope(2.0, usr)
 	else
 		to_chat(usr, "<span class='warning'>You can't look through the scope without stabilizing the rifle!</span>")
+
+/obj/item/gun/projectile/nitroexpress
+	name = "Nitro Express Rifle"
+	desc = ""
+	icon = 'icons/obj/guns/nitroexpress.dmi'
+	icon_state = "nitro_rifle"
+	item_state = "nitro_rifle"
+	w_class = ITEMSIZE_LARGE
+	force = 10
+	slot_flags = SLOT_BACK
+	caliber = "16mm"
+	recoil = 8
+	handle_casings = HOLD_CASINGS
+	load_method = SINGLE_CASING
+	max_shells = 2
+	ammo_type = /obj/item/ammo_casing/panzershell
+
+	accuracy = -1
+	offhand_accuracy = -2
+	var/open = 0
+
+	is_wieldable = TRUE
+
+	fire_sound = 'sound/weapons/gunshot/musket.ogg'
+
+	recoil_wielded = 4
+	accuracy_wielded = 4
+
+/obj/item/gun/projectile/nitroexpress/update_icon()
+	..()
+	if(open)
+		icon_state = "nitro_unloaded"
+	else
+		icon_state = "nitro_rifle"
+
+/obj/item/gun/projectile/nitroexpress/unique_action(mob/user as mob)
+	open = !open
+	if(open)
+		playsound(src.loc, 'sound/weapons/blade_open.ogg', 50, 1)
+		if(chambered)
+			to_chat(user, "<span class='notice'>You open the rifle, ejecting [chambered]!</span>")
+			chambered.forceMove(get_turf(src))
+			loaded -= chambered
+			chambered = null
+		else
+			to_chat(user, "<span class='notice'>You open the rifle.</span>")
+	else
+		to_chat(user, "<span class='notice'>You close the rifle.</span>")
+		playsound(src.loc, 'sound/weapons/blade_close.ogg', 50, 1)
+		open = 0
+	add_fingerprint(user)
+	update_icon()
+
+/obj/item/gun/projectile/nitroexpress/special_check(mob/user)
+	if(open)
+		to_chat(user, "<span class='warning'>You can't fire [src] while the Rifle is open!</span>")
+		return 0
+	return ..()
+
+/obj/item/gun/projectile/nitroexpress/load_ammo(var/obj/item/A, mob/user)
+	if(!open)
+		return
+	..()
+
+/obj/item/gun/projectile/nitroexpress/unload_ammo(mob/user, var/allow_dump=1)
+	if(!open)
+		return
+	..()
+
+/*/obj/item/gun/projectile/nitroexpress/handle_post_fire(mob/user)
+ 	..()
+	if(!wielded)
+		var/mob/living/H = user
+		H.visible_message(SPAN_WARNING("\The [src] goes flying out of \the [H]'s hand!"), SPAN_WARNING("\The [src] flies out of your hands!"))
+		H.drop_item(src)
+		src.throw_at(get_edge_target_turf(src, reverse_dir[H.dir], 3, 3))
+
+		var/obj/item/organ/external/LH = H.get_organ(BP_L_HAND)
+		var/obj/item/organ/external/RH = H.get_organ(BP_R_HAND)
+		var/active_hand = H.hand
+
+		if(active_hand)
+			LH.take_damage(30)
+		else
+			RH.take_damage(30)
+
+ */
