@@ -8,6 +8,7 @@
 	ship_cost = 1
 	id = "ssmd_corvette"
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/ssmd_shuttle)
+	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
 
 /singleton/submap_archetype/ssmd_corvette
 	map = "SSMD Corvette"
